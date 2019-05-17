@@ -20,7 +20,11 @@ def main(args):
     detections.load_model(frozen_model)
     # Load mtccn model
     model_dir = "models/mtcnn"
-    mtcnn_detector = MtcnnDetector(model_folder=model_dir, num_worker=4)
+    # Use gpu if available
+    ctx = "gpu" if tf.test.is_gpu_available() else "cpu"
+    tf.logging.log_if(tf.logging.INFO, "Running on GPU", ctx == "gpu")
+    mtcnn_detector = MtcnnDetector(
+        model_folder=model_dir, num_worker=4, ctx=ctx)
     # Infer usernames from filenames
     filenames = [
         os.path.join(args.image_dir, file) for file in os.listdir(args.image_dir)]

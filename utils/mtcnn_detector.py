@@ -18,7 +18,7 @@ class MtcnnDetector(object):
     def __init__(self, model_folder='.', minsize=20,
                  threshold=[0.6, 0.7, 0.8], factor=0.709,
                  num_worker=1, accurate_landmark=False,
-                 ctx=mx.cpu()):
+                 ctx="cpu"):
         """
         Initialize the detector
 
@@ -31,6 +31,7 @@ class MtcnnDetector(object):
             num_worker: (int) number of processes we use for first stage
             accurate_landmark: (bool) use accurate landmark localization or not
         """
+        ctx = mx.gpu() if ctx == "gpu" else mx.cpu()
 
         self.num_worker = num_worker
         self.accurate_landmark = accurate_landmark
