@@ -144,7 +144,6 @@ def track_faces(tracker, vcap, n, embeddings, user_data):
                 cv2.FONT_HERSHEY_SIMPLEX, 0.7, color, 2)
             # Delete object if it is not found
             if multitracker.data.loc[_id]["failures"] >= multitracker.maxDetections:
-                tf.logging.info("Deregistering {}".format(username.upper()))
                 del trackableFaces[_id]
         cv2.imshow("face_detections", frame)
         if cv2.waitKey(1) & 0xFF == ord("q"):
@@ -156,7 +155,7 @@ def track_faces(tracker, vcap, n, embeddings, user_data):
     cv2.destroyAllWindows()
 
 
-def parse_argumnents(argv):
+def parse_arguments(argv):
     parser = argparse.ArgumentParser()
 
     parser.add_argument("user_data", type=str,
@@ -172,4 +171,4 @@ def parse_argumnents(argv):
 
 
 if __name__ == "__main__":
-    main(parse_argumnents(sys.argv[1:]))
+    main(parse_arguments(sys.argv[1:]))
