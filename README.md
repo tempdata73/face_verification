@@ -21,4 +21,4 @@ The code has been tested using python 3.7.1 under 18.10 Ubuntu.
 The program consists of three parts: video file (webcam feed or downloaded video); user metadata and embeddings (both created from the *create_database.py* script). User metadata and embeddings derive from an image folder that contains all of the users to be identified. As a prerequisite you should have both video file and the images folder. Take into account that the image filename of a user will be used as his username.
 1. Cd to the 'src' directory
 2. Run `python create_database.py output/user_data.csv output/embeddings.npy path/to/images/` to create embedddings
-3. Run `python main.py video_file.mp4 path/to/user_data.csv path/to/embeddings.npy` for face tracking and verification. If you wish to keep track of time a user appears in the video, run *screentime.py* instead of *main.py*
+3. Run `python main.py video_file.mp4 output/user_data.csv output/embeddings.npy` for face tracking and verification. If you wish to keep track of time a user appears in the video, run *screentime.py* instead of *main.py*
