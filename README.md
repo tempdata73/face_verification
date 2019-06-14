@@ -2,7 +2,7 @@
 Opencv-tensorflow-mxnet implementation of face tracking and verification on real time using either CPU or GPU.
 The pretrained models used for face verification were obtained from [David Sandberg's github repo](https://github.com/davidsandberg/facenet)
 which are tensorflow implementations of [FaceNet](https://arxiv.org/abs/1503.03832).
-Instead of using Viola and Jones' face detector, this repository uses a [implementation of the MTCNN model] (https://github.com/YYuanAnyVision/mxnet_mtcnn_face_detection) for both face detection and tracking initialization. It is also used for database creation.
+Instead of using Viola and Jones' face detector, this repository uses a [implementation of the MTCNN model](https://github.com/YYuanAnyVision/mxnet_mtcnn_face_detection) for both face detection and tracking initialization. It is also used for database creation.
 (the original paper can be found [here](https://kpzhang93.github.io/MTCNN_face_detection_alignment/paper/spl.pdf))
 
 ## Compatibility
